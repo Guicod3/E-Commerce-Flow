@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/market-icon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../../output.css">
     <title>Format Text - E-Commerce Flow</title>
 </head>
-<body class="bg-zinc-100 font-sans">
-    
-    <div class="p-5 text-gray-800 bg-white">
-        <h1 class="font-extrabold text-4xl">E-Commerce Flow</h1>
-        <p class="font-semibold text-xl text-gray-700">Ferramentas para seus anúncios</p>
-    </div>
 
-    <div class="w-auto h-14 bg-amber-100 shadow-lg"></div>
+<body class="bg-zinc-100 font-sans flex flex-col min-h-screen">
 
-    <div class="flex items-center justify-center flex-col mt-5 mx-5">
-        <h1 class="font-bold text-3xl text-gray-800 mr-auto">Formatador de descrição</h1>
-        
-        <textarea name="text-input" id="text-input" placeholder="Insira seu texto aqui..." class="w-full mt-3 h-64 rounded-xl placeholder-gray-500 shadow-md p-3"></textarea>
-    
-        <div class="mx-5 flex items-center justify-between mt-6 w-full space-x-16">
+    <!-- Conteúdo Principal -->
+    <div class="flex-grow">
+        <div class="p-5 text-gray-800 bg-white">
+            <h1 class="font-extrabold text-4xl">E-Commerce Flow</h1>
+            <p class="font-semibold text-xl text-gray-700">Ferramentas para seus anúncios</p>
+        </div>
 
-            <div class="w-full mb-auto">
-                <h3 class="font-bold text-2xl text-gray-800">Descrição em texto</h3>
+        <div class="w-auto h-11 bg-amber-100 shadow-lg"></div>
 
-                <div id="output" class="w-full shadow-md rounded-xl h-56 bg-white mt-2 p-3">
+        <div class="flex items-center justify-center flex-col mt-5 mx-5">
+            <h1 class="font-bold text-3xl text-gray-800 mr-auto">Formatador de descrição</h1>
+
+            <textarea name="text-input" id="text-input" placeholder="Insira seu texto aqui..."
+                class="w-full mt-3 h-64 rounded-xl placeholder-gray-500 shadow-md p-3"></textarea>
+
+            <div class="mx-5 flex items-center justify-between mt-6 w-full space-x-16">
+
+                <div class="w-full mb-auto">
+                    <div id="title" class="flex items-center justify-between">
+                        <h3 class="font-bold text-2xl text-gray-800">Descrição em texto</h3>
+                    </div>
+
+                    <div id="output" class="w-full shadow-md rounded-xl h-56 bg-white mt-2 p-3">
+                    </div>
                 </div>
-            </div>
-            
-            <div class="w-full mb-auto">
-                <h3 class="font-bold text-2xl text-gray-800">Descrição em Html</h3>
 
-                <div id="outputHTML" class="w-full shadow-md rounded-xl h-56 bg-white mt-2 p-3">
+                <div class="w-full mb-auto">
+                    <div id="titleHTML" class="flex items-center justify-between">
+                        <h3 class="font-bold text-2xl text-gray-800">Descrição em Html</h3>
+                    </div>
+
+                    <div id="outputHTML" class="w-full shadow-md rounded-xl h-56 bg-white mt-2 p-3">
+                    </div>
                 </div>
+
             </div>
 
         </div>
     </div>
 
+    <footer class="bg-gray-800 text-white py-1">
+        <div class="container mx-auto text-center">
+            <p>Criado por Guilherme Miranda</p>
+        </div>
+    </footer>
+
     <script type="module" src="../logic/formatText.js"></script>
-    <script type="module" src="../logic/copyText.js"></script>
 </body>
+
 </html>
