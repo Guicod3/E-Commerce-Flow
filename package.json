@@ -1,5 +1,8 @@
 {
-  "devDependencies": {
+  "scripts": {
+    "build": "tailwindcss build src/input.css -o src/output.css",
+    "start": "vercel dev"},
+  "dependencies": {
     "tailwindcss": "^3.4.10"
   }
 }
