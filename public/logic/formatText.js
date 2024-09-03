@@ -61,39 +61,60 @@ function buttonCopyText() {
             document.getElementById('imgTextConfirm').remove()
         }
     } else{
+        function createButton(){
+            imgText.src = '../assets/clipboard-text-white.svg' //Copy Text
+            hoverimg.src = '../assets/clipboard-text.svg'
+            imgText.alt = 'copyadd'
+            imgText.style = 'width: 20px'
+            hoverimg.style = 'width: 20px'
+            spancopy.id = 'status'
+            imgText.id = 'imgcopy'
+            divcopy.id = 'imgText'
+            spancopy.textContent = 'Copiar'
+            spancopy.className = 'font-semibold text-sm'
+            divcopy.className = 'transition hover:scale-110 hover:-translate-y-2 group flex items-center space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl'
+            imgText.className = 'object-cover group-hover:hidden'
+            hoverimg.className = 'hidden w-0 object-cover group-hover:block'
+            divcopy.appendChild(spancopy)
+            divcopy.appendChild(imgText)
+            divcopy.appendChild(hoverimg)
+            title.appendChild(divcopy)
+        }
+
         const title = document.getElementById('title')
         const imgText = document.createElement('img')
+        const divcopy = document.createElement('div')
+        const spancopy = document.createElement('span')
+        const hoverimg = document.createElement('img')
     
         //TEXT Only
         if (document.getElementById('imgText')){ //Don't repeat
             return
         }else {
-            imgText.src = '../assets/clipboard-text.svg' //Copy Text
-            imgText.alt = 'copyadd'
-            imgText.style = 'width: 25px'
-            imgText.id = 'imgText'
-            title.appendChild(imgText)
+            createButton()
         }
     
         //Click icon
-        imgText.addEventListener('click', () => {
-            imgText.src = '../assets/clipboard-confirm.svg';
-            imgText.id = 'imgTextConfirm'
-            const clipboardItem = new ClipboardItem({
-                "text/html": new Blob([output.innerHTML], { type: "text/html" }),
-                "text/plain": new Blob([output.innerHTML], { type: "text/plain" })
-            });
-            navigator.clipboard.write([clipboardItem])
+        divcopy.addEventListener('click', () => {
+            if (document.getElementById('imgText')){
+                imgText.src = '../assets/clipboard-confirm-white.svg';
+                divcopy.id = 'imgTextConfirm'
+                spancopy.textContent = 'Copiado'
+                hoverimg.src = '../assets/clipboard-confirm.svg'
+                const clipboardItem = new ClipboardItem({
+                    "text/html": new Blob([output.innerHTML], { type: "text/html" }),
+                    "text/plain": new Blob([output.innerHTML], { type: "text/plain" })
+                });
+                navigator.clipboard.write([clipboardItem])
+            } else{
+                createButton()
+            }
         });
     
         //Return Icon
         if (document.getElementById('imgTextConfirm')){ //Start copy again
             document.getElementById('imgTextConfirm').remove()
-            imgText.src = '../assets/clipboard-text.svg'
-            imgText.alt = 'copyadd'
-            imgText.style = 'width: 25px'
-            imgText.id = 'imgText'
-            title.appendChild(imgText)
+            createButton()
         }
     }
 }
@@ -109,36 +130,56 @@ function buttonCopyHTML (){
             document.getElementById('imgHTMLConfirm').remove()
         }
     } else{
+        function createButtonHTML(){
+            imgHTML.src = '../assets/clipboard-text-white.svg' //Copy Text
+            hoverimgHTML.src = '../assets/clipboard-text.svg'
+            imgHTML.alt = 'copyadd'
+            imgHTML.style = 'width: 20px'
+            hoverimgHTML.style = 'width: 20px'
+            spancopyHTML.id = 'status'
+            imgHTML.id = 'imgcopyHTML'
+            divcopyHTML.id = 'imgHTML'
+            spancopyHTML.textContent = 'Copiar'
+            spancopyHTML.className = 'font-semibold text-sm'
+            divcopyHTML.className = 'transition hover:scale-110 hover:-translate-y-1 group flex items-center space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl'
+            imgHTML.className = 'object-cover group-hover:hidden'
+            hoverimgHTML.className = 'hidden w-0 object-cover group-hover:block'
+            divcopyHTML.appendChild(spancopyHTML)
+            divcopyHTML.appendChild(imgHTML)
+            divcopyHTML.appendChild(hoverimgHTML)
+            titleHTML.appendChild(divcopyHTML)
+        }
+
         const titleHTML = document.getElementById('titleHTML')
         const imgHTML = document.createElement('img')
+        const divcopyHTML = document.createElement('div')
+        const spancopyHTML = document.createElement('span')
+        const hoverimgHTML = document.createElement('img')
     
         //HTML Only
         if (document.getElementById('imgHTML')){ //Don't repeat
             return
         }else {
-            imgHTML.src = '../assets/clipboard-text.svg' //Copy Text
-            imgHTML.alt = 'copyadd'
-            imgHTML.style = 'width: 25px'
-            imgHTML.id = 'imgHTML'
-            titleHTML.appendChild(imgHTML)
+            createButtonHTML()
         }
     
         //Click icon
-        imgHTML.addEventListener('click', () => {
-            imgHTML.src = '../assets/clipboard-confirm.svg';
-            imgHTML.id = 'imgHTMLConfirm'
-            imgHTML.className = ''
-            navigator.clipboard.writeText(outputHTML.textContent)
+        divcopyHTML.addEventListener('click', () => {
+            if (document.getElementById('imgHTML')){
+                imgHTML.src = '../assets/clipboard-confirm-white.svg';
+                divcopyHTML.id = 'imgHTMLConfirm'
+                spancopyHTML.textContent = 'Copiado'
+                hoverimgHTML.src = '../assets/clipboard-confirm.svg'
+                navigator.clipboard.writeText(outputHTML.textContent)
+            } else{
+                createButtonHTML()
+            }
         });
     
         //Return Icon
         if (document.getElementById('imgHTMLConfirm')){ //Start copy again
             document.getElementById('imgHTMLConfirm').remove()
-            imgHTML.src = '../assets/clipboard-text.svg'
-            imgHTML.alt = 'copyadd'
-            imgHTML.style = 'width: 25px'
-            imgHTML.id = 'imgHTML'
-            titleHTML.appendChild(imgHTML)
+            createButtonHTML()
         }
     }
 }
