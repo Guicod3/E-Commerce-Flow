@@ -62,8 +62,8 @@ function buttonCopyText() {
         }
     } else{
         function createButton(){
-            imgText.src = '../assets/clipboard-text-white.svg' //Copy Text
-            hoverimg.src = '../assets/clipboard-text.svg'
+            imgText.src = './assets/clipboard-text-white.svg' //Copy Text
+            hoverimg.src = './assets/clipboard-text.svg'
             imgText.alt = 'copyadd'
             imgText.style = 'width: 20px'
             hoverimg.style = 'width: 20px'
@@ -72,7 +72,7 @@ function buttonCopyText() {
             divcopy.id = 'imgText'
             spancopy.textContent = 'Copiar'
             spancopy.className = 'font-semibold text-sm'
-            divcopy.className = 'transition hover:scale-110 hover:-translate-y-2 group flex items-center space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl'
+            divcopy.className = 'transition hover:scale-110 hover:-translate-y-1 group flex items-center space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl cursor-pointer'
             imgText.className = 'object-cover group-hover:hidden'
             hoverimg.className = 'hidden w-0 object-cover group-hover:block'
             divcopy.appendChild(spancopy)
@@ -97,10 +97,10 @@ function buttonCopyText() {
         //Click icon
         divcopy.addEventListener('click', () => {
             if (document.getElementById('imgText')){
-                imgText.src = '../assets/clipboard-confirm-white.svg';
+                imgText.src = './assets/clipboard-tick-white.svg';
                 divcopy.id = 'imgTextConfirm'
                 spancopy.textContent = 'Copiado'
-                hoverimg.src = '../assets/clipboard-confirm.svg'
+                hoverimg.src = './assets/clipboard-confirm.svg'
                 const clipboardItem = new ClipboardItem({
                     "text/html": new Blob([output.innerHTML], { type: "text/html" }),
                     "text/plain": new Blob([output.innerHTML], { type: "text/plain" })
@@ -131,8 +131,8 @@ function buttonCopyHTML (){
         }
     } else{
         function createButtonHTML(){
-            imgHTML.src = '../assets/clipboard-text-white.svg' //Copy Text
-            hoverimgHTML.src = '../assets/clipboard-text.svg'
+            imgHTML.src = './assets/clipboard-text-white.svg' //Copy Text
+            hoverimgHTML.src = './assets/clipboard-text.svg'
             imgHTML.alt = 'copyadd'
             imgHTML.style = 'width: 20px'
             hoverimgHTML.style = 'width: 20px'
@@ -141,7 +141,7 @@ function buttonCopyHTML (){
             divcopyHTML.id = 'imgHTML'
             spancopyHTML.textContent = 'Copiar'
             spancopyHTML.className = 'font-semibold text-sm'
-            divcopyHTML.className = 'transition hover:scale-110 hover:-translate-y-1 group flex items-center space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl'
+            divcopyHTML.className = 'transition hover:scale-110 hover:-translate-y-1 group flex items-center space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl cursor-pointer'
             imgHTML.className = 'object-cover group-hover:hidden'
             hoverimgHTML.className = 'hidden w-0 object-cover group-hover:block'
             divcopyHTML.appendChild(spancopyHTML)
@@ -166,10 +166,10 @@ function buttonCopyHTML (){
         //Click icon
         divcopyHTML.addEventListener('click', () => {
             if (document.getElementById('imgHTML')){
-                imgHTML.src = '../assets/clipboard-confirm-white.svg';
+                imgHTML.src = './assets/clipboard-tick-white.svg';
                 divcopyHTML.id = 'imgHTMLConfirm'
                 spancopyHTML.textContent = 'Copiado'
-                hoverimgHTML.src = '../assets/clipboard-confirm.svg'
+                hoverimgHTML.src = './assets/clipboard-confirm.svg'
                 navigator.clipboard.writeText(outputHTML.textContent)
             } else{
                 createButtonHTML()
