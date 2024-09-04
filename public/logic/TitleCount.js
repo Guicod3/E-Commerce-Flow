@@ -37,36 +37,77 @@ function countTileAndWordsAndLines (){
 function getFirstLine(){
     const getinput = document.getElementById('text-input').value
     const firstLine = getinput.split(/\r?\n/)[0]
-    document.getElementById('title-input').textContent = firstLine;
+    document.getElementById('title-input').value = firstLine;
+    createButtonTitle()
+    countTileAndWordsAndLines()
 }
 
-function createButtonTitle(){ //PAREI AQUI
+function createButtonTitle(){
     const title = document.getElementById('titulo')
     const img = document.createElement('img')
     const div = document.createElement('div')
     const span = document.createElement('span')
     const hover = document.createElement('img')
+    const getTitle = document.getElementById('title-input').value;
+    const outputTitle = document.getElementById('title-input')
 
-    img.src = './assets/clipboard-text-white.svg' //Copy Text
-    hover.src = './assets/clipboard-text.svg'
-    img.alt = 'copyadd'
-    img.style = 'width: 20px'
-    hover.style = 'width: 20px'
-    span.id = 'status'
-    img.id = 'img'
-    div.id = 'img'
-    span.textContent = 'Copiar'
-    span.className = 'font-semibold text-sm'
-    div.className = 'transition hover:scale-110 hover:-translate-y-1 group flex items-center space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl cursor-pointer ml-auto'
-    img.className = 'object-cover group-hover:hidden'
-    hover.className = 'hidden w-0 object-cover group-hover:block'
-    div.appendChild(span)
-    div.appendChild(img)
-    div.appendChild(hover)
-    title.appendChild(div)
+    if (getTitle === ''){
+        if (document.getElementById('button')){
+            document.getElementById('button').remove()
+        } else{
+            document.getElementById('buttonConfirm').remove()
+        }
+    } else{
+        function createButton(){
+            img.src = './assets/clipboard-text-white.svg' //Copy Text
+            hover.src = './assets/clipboard-text.svg'
+            img.alt = 'copyadd'
+            img.style = 'width: 20px'
+            hover.style = 'width: 20px'
+            span.id = 'status'
+            img.id = 'img'
+            div.id = 'button'
+            span.textContent = 'Copiar'
+            span.className = 'font-semibold text-sm'
+            div.className = 'transition hover:scale-110 hover:-translate-y-1 group flex items-center space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl cursor-pointer ml-auto max-sm:ml-0 max-sm:mb-1'
+            img.className = 'object-cover group-hover:hidden'
+            hover.className = 'hidden w-0 object-cover group-hover:block'
+            div.appendChild(span)
+            div.appendChild(img)
+            div.appendChild(hover)
+            title.appendChild(div)
+        }
+        
+        if (document.getElementById('button')){ //Don't repeat
+            return
+        }else{
+            createButton()
+        }
+
+        //Click icon
+        div.addEventListener('click', () => {
+            if (document.getElementById('button')){
+                img.src = './assets/clipboard-tick-white.svg';
+                div.id = 'buttonConfirm'
+                span.textContent = 'Copiado'
+                hover.src = './assets/clipboard-confirm.svg'
+                navigator.clipboard.writeText(outputTitle.value);
+
+                setTimeout(createButton, 3500)
+            } else{
+                createButton()
+            }
+        });
+
+        //Return Icon
+        if (document.getElementById('buttonConfirm')){ //Start copy again
+            document.getElementById('buttonConfirm').remove()
+            createButton()
+        }
+    }
+
 }
 
-document.getElementById('text-input').addEventListener('input', getFirstLine)
 document.getElementById('title-input').addEventListener('input', countTileAndWordsAndLines)
-document.getElementById('text-input').addEventListener('input', createButtonTitle)
+document.getElementById('text-input').addEventListener('input', getFirstLine)
 document.getElementById('title-input').addEventListener('input', createButtonTitle)

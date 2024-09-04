@@ -19,25 +19,27 @@
 
         <div class="w-auto h-11 bg-amber-100 shadow-lg"></div>
 
-        <div class="flex items-center justify-center flex-col mt-5 mx-48 max-sm:mx-5 max-xl:mx-12">
-            <h1 class="font-bold text-3xl text-gray-800 mr-auto max-sm:text-2xl max-sm:mx-auto">Formatador de descrição</h1>
+        <div class="flex items-center justify-center flex-col mt-5 mx-32 max-sm:mx-5 max-xl:mx-12">
+            <h1 class="font-bold text-3xl text-gray-800 mr-auto max-sm:text-xl max-sm:mx-auto">Formatador de descrição</h1>
 
             <textarea name="text-input" id="text-input" placeholder="Insira seu texto aqui..."
                 class="w-full mt-1 h-64 rounded-xl placeholder-gray-500 shadow-md p-3"></textarea>
 
-            <div class="flex items-baseline mt-6 justify-start mr-auto" id="titulo">
-                <h2 class="font-bold text-3xl text-gray-800 max-sm:text-2xl max-sm:mx-auto">Título</h2>
-                <div class="ml-5 text-lg">
-                    <span class="max-md:text-base">Caracteres: </span>
-                    <span class="font-semibold" id="countCaracteres">0</span>
-                </div>
-                <div class="ml-4 text-lg">
-                    <span class="max-md:text-base">Palavras: </span>
-                    <span class="font-semibold" id="countPalavras">0</span>
-                </div>
-                <div class="ml-4 text-lg">
-                    <span class="max-md:text-base">Linhas: </span>
-                    <span class="font-semibold" id="countLines">0</span>
+            <div class="flex items-baseline mt-6 justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start" id="titulo">
+                <h2 class="font-bold text-3xl text-gray-800 max-sm:text-xl max-sm:space-y-1">Título</h2>
+                <div class="flex items-center max-sm:mr-auto">
+                    <div class="ml-5 text-lg max-sm:ml-0">
+                        <span class="max-md:text-sm">Caracteres: </span>
+                        <span class="font-semibold max-md:text-base" id="countCaracteres">0</span>
+                    </div>
+                    <div class="ml-4 text-lg max-sm:ml-2">
+                        <span class="max-md:text-sm">Palavras: </span>
+                        <span class="font-semibold max-md:text-base" id="countPalavras">0</span>
+                    </div>
+                    <div class="ml-4 text-lg max-sm:ml-2">
+                        <span class="max-md:text-sm">Linhas: </span>
+                        <span class="font-semibold max-md:text-base" id="countLines">0</span>
+                    </div>
                 </div>
             </div>
 
@@ -48,7 +50,7 @@
 
                 <div class="w-full mb-auto">
                     <div id="title" class="flex items-center justify-between">
-                        <h3 class="font-bold text-2xl text-gray-800">Descrição em texto</h3>
+                        <h3 class="font-bold text-2xl text-gray-800 max-sm:text-xl">Descrição em texto</h3>
                     </div>
 
                     <div id="output" class="w-full shadow-md rounded-xl h-56 bg-white mt-1 p-3">
@@ -57,7 +59,7 @@
 
                 <div class="w-full mb-auto">
                     <div id="titleHTML" class="flex items-center justify-between">
-                        <h3 class="font-bold text-2xl text-gray-800">Descrição em Html</h3>
+                        <h3 class="font-bold text-2xl text-gray-800 max-sm:text-xl">Descrição em Html</h3>
                     </div>
 
                     <div id="outputHTML" class="w-full shadow-md rounded-xl h-56 bg-white mt-1 p-3">

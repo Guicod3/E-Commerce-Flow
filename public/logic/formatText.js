@@ -106,6 +106,8 @@ function buttonCopyText() {
                     "text/plain": new Blob([output.innerHTML], { type: "text/plain" })
                 });
                 navigator.clipboard.write([clipboardItem])
+
+                setTimeout(createButton, 3500)
             } else{
                 createButton()
             }
@@ -171,6 +173,8 @@ function buttonCopyHTML (){
                 spancopyHTML.textContent = 'Copiado'
                 hoverimgHTML.src = './assets/clipboard-confirm.svg'
                 navigator.clipboard.writeText(outputHTML.textContent)
+
+                setTimeout(createButtonHTML, 3500)
             } else{
                 createButtonHTML()
             }
