@@ -1,10 +1,25 @@
 function countTileAndWordsAndLines (){
     const title = document.getElementById('title-input').value
+    const tituloArea = document.getElementById('title-input')
 
     function countCaracteres(){
-        const showCaracteres= document.getElementById('countCaracteres')
+        const showCaracteres = document.getElementById('countCaracteres')
         const caracteres = title.length
         showCaracteres.textContent = caracteres
+
+        if (caracteres > 120){
+            tituloArea.classList.add('bg-red-200')
+        } else if(caracteres === 120){
+            tituloArea.classList.remove('bg-red-200')
+            tituloArea.classList.add('bg-green-200')
+
+            setTimeout(() => {
+                tituloArea.classList.remove('bg-green-200')
+            }, 1000);
+        } else{
+            tituloArea.classList.remove('bg-red-200')
+            tituloArea.classList.remove('bg-green-200')
+        }
     }
 
     function countWords(){

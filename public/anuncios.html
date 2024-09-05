@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de Anúncios - E-Commerce Flow</title>
+    <link rel="shortcut icon" href="./assets/market-icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/output.css">
+</head>
+<body class="bg-zinc-100 font-sans flex flex-col min-h-screen">
+
+    <div class="p-5 text-gray-800 bg-white">
+        <h1 class="font-extrabold text-4xl max-sm:text-3xl">E-Commerce Flow</h1>
+        <p class="font-semibold text-xl text-gray-700 max-sm:text-base">Ferramentas para seus anúncios</p>
+    </div>
+
+    <div class="w-auto h-11 bg-amber-100 shadow-lg flex items-center space-x-3 pl-5 font-bold text-gray-800">
+        <a href="./index.html" class="transition duration-300 ease-in-out hover:text-white hover:bg-gray-800 p-1 rounded-lg hover:scale-110 flex items-center h-6 cursor-pointer">
+            <div>Descrição</div>
+        </a>
+
+        <a href="./anuncios.html" class="transition duration-300 ease-in-out hover:text-white hover:bg-gray-800 p-1 rounded-lg hover:scale-110 flex items-center h-6 cursor-pointer">
+            <div>Anúncios</div>
+        </a>
+    </div>
+
+    <div class="flex items-center justify-center flex-col mt-5 mx-32 max-sm:mx-5 max-xl:mx-12">
+        <h2 class="font-bold text-3xl text-gray-800 max-sm:text-xl max-sm:space-y-1">Editor de títulos para anúncios</h2>
+
+        <div class="w-full border-b-2 border-gray-300 pb-6">
+            <div class="flex items-baseline mt-6 justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start" id="titulo-1">
+                <h2 class="font-bold text-2xl text-gray-800 max-sm:text-xl max-sm:space-y-1">Título Principal</h2>
+                <div class="items-center max-sm:mr-auto hidden">
+                    <div class="ml-5 text-lg max-sm:ml-0">
+                        <span class="max-md:text-sm">Caracteres: </span>
+                        <span class="font-semibold max-md:text-base" id="countCaracteres">0</span>
+                    </div>
+                    <div class="ml-4 text-lg max-sm:ml-2">
+                        <span class="max-md:text-sm">Palavras: </span>
+                        <span class="font-semibold max-md:text-base" id="countPalavras">0</span>
+                    </div>
+                    <div class="ml-4 text-lg max-sm:ml-2">
+                        <span class="max-md:text-sm">Linhas: </span>
+                        <span class="font-semibold max-md:text-base" id="countLines">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <textarea name="title-input" id="TitleOriginal" placeholder="Título..."
+                class="w-full mt-1 h-12 rounded-xl placeholder-gray-500 shadow-md p-3 max-md:h-20 bg-gray-200"></textarea>
+        </div>
+
+        <ul id="textAreaAnuncios" class="w-full">
+            <li>
+                <div class="flex items-baseline mt-6 justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start" id="titulo-2">
+                    <div class="flex items-center max-sm:mr-auto">
+                        <div class="text-lg max-sm:ml-0">
+                            <span class="max-md:text-sm">Caracteres: </span>
+                            <span class="font-semibold max-md:text-base" id="countCaracteres1">0</span>
+                        </div>
+                        <div class="ml-4 text-lg max-sm:ml-2">
+                            <span class="max-md:text-sm">Palavras: </span>
+                            <span class="font-semibold max-md:text-base" id="countPalavras1">0</span>
+                        </div>
+                        <div class="ml-4 text-lg max-sm:ml-2">
+                            <span class="max-md:text-sm">Linhas: </span>
+                            <span class="font-semibold max-md:text-base" id="countLines1">0</span>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="flex items-center justify-start space-x-4">
+                    <textarea name="title-input" id="an-input1" placeholder="Insira seu texto aqui..."
+                    class="w-4/5 mt-1 h-12 rounded-xl placeholder-gray-500 shadow-md p-3 max-md:h-20 transition-colors duration-500 ease-in-out"></textarea>
+                    <div class="bg-gray-800 h-12 p-1 rounded-xl flex items-center justify-center cursor-pointer" id="button1"> 
+                        <img style="width: 40px;" class="bg-gray-800 p-1 rounded-xl" src="./assets/clipboard-text-white.svg" alt="">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="flex items-baseline mt-1 justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start" id="titulo-2">
+                    <div class="flex items-center max-sm:mr-auto">
+                        <div class="text-lg max-sm:ml-0">
+                            <span class="max-md:text-sm">Caracteres: </span>
+                            <span class="font-semibold max-md:text-base" id="countCaracteres2">0</span>
+                        </div>
+                        <div class="ml-4 text-lg max-sm:ml-2">
+                            <span class="max-md:text-sm">Palavras: </span>
+                            <span class="font-semibold max-md:text-base" id="countPalavras2">0</span>
+                        </div>
+                        <div class="ml-4 text-lg max-sm:ml-2">
+                            <span class="max-md:text-sm">Linhas: </span>
+                            <span class="font-semibold max-md:text-base" id="countLines2">0</span>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="flex items-center justify-start space-x-4">
+                    <textarea name="title-input" id="an-input2" placeholder="Insira seu texto aqui..."
+                    class="w-4/5 mt-1 h-12 rounded-xl placeholder-gray-500 shadow-md p-3 max-md:h-20 transition-colors duration-500 ease-in-out"></textarea>
+                    <div class="bg-gray-800 h-12 p-1 rounded-xl flex items-center justify-center cursor-pointer" id="button2"> 
+                        <img style="width: 40px;" class="bg-gray-800 p-1 rounded-xl" src="./assets/clipboard-text-white.svg" alt="">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="flex items-baseline mt-1 justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start" id="titulo-2">
+                    <div class="flex items-center max-sm:mr-auto">
+                        <div class="text-lg max-sm:ml-0">
+                            <span class="max-md:text-sm">Caracteres: </span>
+                            <span class="font-semibold max-md:text-base" id="countCaracteres3">0</span>
+                        </div>
+                        <div class="ml-4 text-lg max-sm:ml-2">
+                            <span class="max-md:text-sm">Palavras: </span>
+                            <span class="font-semibold max-md:text-base" id="countPalavras3">0</span>
+                        </div>
+                        <div class="ml-4 text-lg max-sm:ml-2">
+                            <span class="max-md:text-sm">Linhas: </span>
+                            <span class="font-semibold max-md:text-base" id="countLines3">0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center justify-start space-x-4">
+                    <textarea name="title-input" id="an-input3" placeholder="Insira seu texto aqui..."
+                    class="w-4/5 mt-1 h-12 rounded-xl placeholder-gray-500 shadow-md p-3 max-md:h-20 transition-colors duration-500 ease-in-out"></textarea>
+                    <div class="bg-gray-800 h-12 p-1 rounded-xl flex items-center justify-center cursor-pointer" id="button3"> 
+                        <img style="width: 40px;" class="bg-gray-800 p-1 rounded-xl" src="./assets/clipboard-text-white.svg" alt="">
+                    </div>
+                </div>
+                
+            </li>
+        </ul>
+        
+        <span class="bg-gray-400 flex justify-center items-center mt-2 text-white font-bold text-3xl rounded-xl p-1 w-4/5 mr-auto transition-colors duration-500 ease-in-out hover:bg-gray-500 cursor-pointer" id="createSpaceText">+</span>
+
+    </div>
+
+    <script src="./logic/anuncios.js"></script>
+    <script src="./logic/copytext.js"></script>
+</body>
+</html>
