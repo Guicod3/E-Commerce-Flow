@@ -33,24 +33,40 @@
         </div>
 
         <div class="flex items-center justify-center flex-col mt-5 mx-32 max-sm:mx-5 max-xl:mx-12">
-            <h1 class="font-bold text-3xl text-gray-800 mr-auto max-sm:text-xl max-sm:mx-auto">Formatador de descrição</h1>
+
+            <div class="flex items-baseline space-x-2 mr-auto text-lg justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start">
+                <h1 class="font-bold text-3xl text-gray-800 max-sm:text-xl max-sm:space-y-1">Formatador de descrição</h1>
+                <div class="flex space-x-2">
+                    <span class="font-bold text-gray-800 max-sm:text-base">Opções: </span>
+                    <div class="flex space-x-3 max-sm:text-base">
+                        <div title="Selecione antes de inserir seu texto.">
+                            <label for="msgFinal">Mensagem final</label>
+                            <input type="checkbox" name="msgFinal" id="msgFinal" onclick="textFormat()">
+                        </div>
+                        <div title="Selecione antes de inserir seu texto.">
+                            <label for="traço">Traços</label>
+                            <input type="checkbox" name="traço" id="traço">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <textarea name="text-input" id="text-input" placeholder="Insira seu texto aqui..."
                 class="w-full mt-1 h-64 rounded-xl placeholder-gray-500 shadow-md p-3"></textarea>
 
-            <div class="flex items-baseline mt-6 justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start" id="titulo">
+            <div class="relative flex items-baseline mt-6 justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start" id="titulo">
                 <h2 class="font-bold text-3xl text-gray-800 max-sm:text-xl max-sm:space-y-1">Título</h2>
-                <div class="flex items-center max-sm:mr-auto">
+                <div class="flex self-baseline max-sm:mr-auto">
                     <div class="ml-5 text-lg max-sm:ml-0">
-                        <span class="max-md:text-sm">Caracteres: </span>
+                        <span class="max-md:text-base">Caracteres: </span>
                         <span class="font-semibold max-md:text-base" id="countCaracteres">0</span>
                     </div>
                     <div class="ml-4 text-lg max-sm:ml-2">
-                        <span class="max-md:text-sm">Palavras: </span>
+                        <span class="max-md:text-base">Palavras: </span>
                         <span class="font-semibold max-md:text-base" id="countPalavras">0</span>
                     </div>
                     <div class="ml-4 text-lg max-sm:ml-2">
-                        <span class="max-md:text-sm">Linhas: </span>
+                        <span class="max-md:text-base">Linhas: </span>
                         <span class="font-semibold max-md:text-base" id="countLines">0</span>
                     </div>
                 </div>

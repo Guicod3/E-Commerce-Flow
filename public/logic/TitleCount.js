@@ -84,7 +84,7 @@ function createButtonTitle(){
             div.id = 'button'
             span.textContent = 'Copiar'
             span.className = 'font-semibold text-sm'
-            div.className = 'transition hover:scale-110 hover:-translate-y-1 group flex items-center space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl cursor-pointer ml-auto max-sm:ml-0 max-sm:mb-1'
+            div.className = 'items-center transition hover:scale-110 hover:-translate-y-1 group flex space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl cursor-pointer ml-auto max-sm:ml-0 max-sm:mb-1'
             img.className = 'object-cover group-hover:hidden'
             hover.className = 'hidden w-0 object-cover group-hover:block'
             div.appendChild(span)

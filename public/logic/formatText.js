@@ -4,6 +4,8 @@ function textFormat() {
     let textAfterFormat = '';
     const output = document.getElementById('output');
     const outputHTML = document.getElementById('outputHTML')
+    const checkFinalMsg = document.getElementById('msgFinal')
+    const checktraço = document.getElementById('traço')
 
     const topicsSubtitle = 'acompanha:'
     const importante = '<br><p style="font-weight: bold">Importante:</p><p>A instalação deve ser feita por um profissional especializado.</p><p>Nós não nos responsabilizamos por instalação mal realizada.</p><p>As imagens são meramente ilustradas, pode ocorrer mudança sem prévio aviso, porém as características técnicas são sempre preservadas.</p>';
@@ -37,15 +39,27 @@ function textFormat() {
     
             // Resto do texto
             else{
-                textAfterFormat += `<p style="font-size: 12pt">- ${textBeforeFormat[index]}</p>`;
+                if(checktraço.checked){
+                    textAfterFormat += `<p style="font-size: 12pt">- ${textBeforeFormat[index]}</p>`;
+                } else{
+                    textAfterFormat += `<p style="font-size: 12pt">${textBeforeFormat[index]}</p>`;
+                }
             }
         };
 
-        textAfterFormat += importante;
-        output.className = 'w-full shadow-md rounded-xl h-auto bg-white mt-2 p-3 mb-10'
-        outputHTML.className = 'w-full shadow-md rounded-xl h-auto bg-white mt-2 p-3 mb-10'
-        output.innerHTML = textAfterFormat;
-        outputHTML.textContent = textAfterFormat;
+        if (checkFinalMsg.checked){
+            textAfterFormat += importante;
+            create()
+        } else{
+            create()
+        }
+
+        function create(){
+            output.className = 'w-full shadow-md rounded-xl h-auto bg-white mt-2 p-3 mb-10'
+            outputHTML.className = 'w-full shadow-md rounded-xl h-auto bg-white mt-2 p-3 mb-10'
+            output.innerHTML = textAfterFormat;
+            outputHTML.textContent = textAfterFormat;
+        }
     }
 
 }
@@ -72,7 +86,7 @@ function buttonCopyText() {
             divcopy.id = 'imgText'
             spancopy.textContent = 'Copiar'
             spancopy.className = 'font-semibold text-sm'
-            divcopy.className = 'transition hover:scale-110 hover:-translate-y-1 group flex items-center space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl cursor-pointer'
+            divcopy.className = 'text-center transition hover:scale-110 hover:-translate-y-1 group flex items-center space-x-1 bg-gray-800 rounded-xl p-1 text-white h-6 hover:text-gray-800 hover:bg-amber-100 hover:shadow-xl cursor-pointer'
             imgText.className = 'object-cover group-hover:hidden'
             hoverimg.className = 'hidden w-0 object-cover group-hover:block'
             divcopy.appendChild(spancopy)
@@ -192,4 +206,5 @@ function buttonCopyHTML (){
 document.getElementById('text-input').addEventListener('input', textFormat);
 document.getElementById('text-input').addEventListener('input', buttonCopyText);
 document.getElementById('text-input').addEventListener('input', buttonCopyHTML);
+
 
