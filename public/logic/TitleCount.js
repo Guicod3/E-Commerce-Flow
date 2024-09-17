@@ -1,4 +1,4 @@
-function countTileAndWordsAndLines (){
+function countTitleAndWordsAndLines (){
     const title = document.getElementById('title-input').value
     const tituloArea = document.getElementById('title-input')
 
@@ -123,6 +123,6 @@ function createButtonTitle(){
 
 }
 
-document.getElementById('title-input').addEventListener('input', countTileAndWordsAndLines)
+document.getElementById('title-input').addEventListener('input', countTitleAndWordsAndLines)
 document.getElementById('text-input').addEventListener('input', getFirstLine)
 document.getElementById('title-input').addEventListener('input', createButtonTitle)

@@ -25,65 +25,66 @@
     </div>
 
     <div class="flex items-center justify-center flex-col mt-5 mx-32 max-sm:mx-5 max-xl:mx-12">
-        <h2 class="font-bold text-3xl text-gray-800 max-sm:text-xl max-sm:space-y-1">Editor de títulos para anúncios</h2>
+        <h2 class="font-extrabold text-3xl text-gray-800 max-sm:text-xl max-sm:space-y-1">Editor de títulos para anúncios</h2>
 
         <div class="w-full border-b-2 border-gray-300 pb-6">
             <div class="flex items-baseline mt-6 justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start" id="titulo-1">
-                <h2 class="font-bold text-2xl text-gray-800 max-sm:text-xl max-sm:space-y-1">Título Principal</h2>
-                <div class="items-center max-sm:mr-auto hidden">
-                    <div class="ml-5 text-lg max-sm:ml-0">
-                        <span class="max-md:text-sm">Caracteres: </span>
-                        <span class="font-semibold max-md:text-base" id="countCaracteres">0</span>
-                    </div>
-                    <div class="ml-4 text-lg max-sm:ml-2">
-                        <span class="max-md:text-sm">Palavras: </span>
-                        <span class="font-semibold max-md:text-base" id="countPalavras">0</span>
-                    </div>
-                    <div class="ml-4 text-lg max-sm:ml-2">
-                        <span class="max-md:text-sm">Linhas: </span>
-                        <span class="font-semibold max-md:text-base" id="countLines">0</span>
-                    </div>
-                </div>
+                <h2 class="font-bold text-2xl text-gray-800 max-sm:text-xl max-sm:space-y-1">Conteúdo Principal</h2>
             </div>
 
-            <textarea name="title-input" id="TitleOriginal" placeholder="Título..."
-                class="w-full mt-1 h-12 rounded-xl placeholder-gray-500 shadow-md p-3 max-md:h-20 bg-gray-200"></textarea>
+            <div class="flex items-center space-x-2">
+                <input placeholder="Título, características..." type="text" name="inputTitle" id="inputTitle" class="w-full mt-1 h-12 rounded-xl placeholder-gray-500 shadow-md p-3 max-md:h-20 bg-gray-200">
+            
+                <img class="bg-gray-800 p-2 mt-auto rounded-xl h-12 transition hover:scale-105" src="./assets/bubble-search-white.png" alt="inputSearch" id="search">
+            </div>
+
         </div>
 
         <ul id="textAreaAnuncios" class="w-full">
-            <li>
-                <div class="flex items-baseline mt-6 justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start" id="titulo-2">
-                    <div class="flex items-center max-sm:mr-auto">
-                        <div class="text-lg max-sm:ml-0">
-                            <span class="max-md:text-sm">Caracteres: </span>
-                            <span class="font-semibold max-md:text-base" id="countCaracteres1">0</span>
-                        </div>
-                        <div class="ml-4 text-lg max-sm:ml-2">
-                            <span class="max-md:text-sm">Palavras: </span>
-                            <span class="font-semibold max-md:text-base" id="countPalavras1">0</span>
-                        </div>
-                        <div class="ml-4 text-lg max-sm:ml-2">
-                            <span class="max-md:text-sm">Linhas: </span>
-                            <span class="font-semibold max-md:text-base" id="countLines1">0</span>
+            <template id="litemplate">
+                <li id="li">
+                    <div class="flex items-baseline mt-6 justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start">
+                        <div class="flex items-center max-sm:mr-auto">
+                            <div class="text-lg max-sm:ml-0">
+                                <span class="max-md:text-sm">Caracteres: </span>
+                                <span class="font-semibold max-md:text-base" id="countCaracteres">0</span>
+                            </div>
+                            <div class="ml-4 text-lg max-sm:ml-2">
+                                <span class="max-md:text-sm">Palavras: </span>
+                                <span class="font-semibold max-md:text-base" id="countPalavras">0</span>
+                            </div>
+                            <div class="ml-4 text-lg max-sm:ml-2">
+                                <span class="max-md:text-sm">Linhas: </span>
+                                <span class="font-semibold max-md:text-base" id="countLines">0</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-        
-                <div class="flex items-center justify-start space-x-4">
-                    <textarea name="title-input" id="an-input1" placeholder="Insira seu texto aqui..."
-                    class="w-4/5 mt-1 h-12 rounded-xl placeholder-gray-500 shadow-md p-3 max-md:h-20 transition-colors duration-500 ease-in-out"></textarea>
-                    <div class="bg-gray-800 h-12 p-1 rounded-xl flex items-center justify-center cursor-pointer" id="button1"> 
-                        <img style="width: 40px;" class="bg-gray-800 p-1 rounded-xl" src="./assets/clipboard-text-white.svg" alt="">
+            
+                    <div class="flex items-center justify-start space-x-2">
+                        <textarea name="title-input" id="titleResult" placeholder="Insira seu texto aqui..."
+                        class="w-4/5 mt-1 h-12 rounded-xl placeholder-gray-500 shadow-md p-3 max-md:h-20 transition-colors duration-500 ease-in-out"></textarea>
+                        <div class="bg-gray-800 h-12 p-1 rounded-xl flex items-center justify-center cursor-pointer mt-auto" id="buttoncopy"> 
+                            <img style="width: 40px;" class="bg-gray-800 p-1 rounded-xl" src="./assets/clipboard-text-white.svg" alt="">
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
+            </template>
         </ul>
         
-        <span class="bg-gray-400 flex justify-center items-center mt-2 text-white font-bold text-3xl rounded-xl p-1 w-4/5 mr-auto transition-colors duration-500 ease-in-out hover:bg-gray-500 cursor-pointer" id="createSpaceText">+</span>
+        <div class="flex justify-center items-center w-4/5 space-x-2 mr-auto mb-40">
+            <button type="button" class="bg-gray-400 mt-2 text-white font-bold text-2xl rounded-xl w-4/5 transition-colors duration-500 ease-in-out hover:bg-red-300 cursor-pointer pb-1" id="removeSpaceText">Remover</button>
+            <button type="button" class="bg-gray-400 mt-2 text-white font-bold text-2xl rounded-xl w-4/5 transition-colors duration-500 ease-in-out hover:bg-green-300 cursor-pointer pb-1" id="createSpaceText">Adicionar</button>
+        </div>
         
     </div>
 
+    <footer class="flex items-center mt-auto"></footer>
+            <p class="bg-gray-800 text-white text-center">E-Commerce Flow &#174;</p>
+    </footer>
+
+    <script src="./logic/createAndRemoveSpace.js"></script>
     <script src="./logic/anuncios.js"></script>
     <script src="./logic/copytext.js"></script>
+    <script src="./logic/count.js"></script>
 </body>
 </html>

@@ -1,21 +1,12 @@
-function putTitle(){
-    const tituloOriginal = document.getElementById('TitleOriginal').value
-    const output1 = document.getElementById('an-input1')
+function putText(){
+    let itemCount = 0
+    const title = document.getElementById('inputTitle').value
+    while(document.getElementById(`li-${itemCount}`)){
+        document.getElementById(`titleResult-${itemCount}`).textContent = ''
+        document.getElementById(`titleResult-${itemCount}`).textContent = title
 
-    output1.textContent = tituloOriginal.trim()
-}
-
-function main(){
-    const output1 = document.getElementById('an-input1').value
-
-    function countCaracteres(){
-        const showCaracteres1 = document.getElementById('countCaracteres1')
-        const caracteres1 = output1.length
-        showCaracteres1.textContent = caracteres1
+        itemCount++
     }
-
-    countCaracteres()
 }
 
-document.getElementById('TitleOriginal').addEventListener('input', putTitle)
-document.getElementById('an-input1').addEventListener('input', main)
+document.getElementById('search').addEventListener('click', putText)
