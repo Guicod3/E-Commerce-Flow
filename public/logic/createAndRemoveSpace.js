@@ -14,6 +14,16 @@ function addSpaceText(){
         newLi.querySelector('#countLines').id = `countLines-${itemCount}`;
         newLi.querySelector('#titleResult').id = `titleResult-${itemCount}`;
         newLi.querySelector('#buttoncopy').id = `buttoncopy-${itemCount}`;
+        newLi.querySelector(`#buttoncopy-${itemCount}`).addEventListener('click', (event) =>{
+            //Função para copiar e alterar ícone
+            let textarea = event.target.closest('li').querySelector('textarea');
+            navigator.clipboard.writeText(textarea.value)
+            let buttonimg = event.target.closest('li').querySelector('img');
+            buttonimg.src = "./assets/clipboard-tick-white.svg"
+            setTimeout(() => {
+                buttonimg.src = "./assets/clipboard-text-white.svg"
+            }, 1500);
+        })
         newLi.querySelector('#li').id = itemCount;
     
         ul.appendChild(newLi)

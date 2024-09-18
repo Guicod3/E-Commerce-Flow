@@ -1,0 +1,15 @@
+/* Adiciona a animação ao botão */
+@keyframes jumpAndReturn {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Ajuste a altura do pulo conforme necessário */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.jump {
+  animation: jumpAndReturn 0.5s ease-in-out;
+}
