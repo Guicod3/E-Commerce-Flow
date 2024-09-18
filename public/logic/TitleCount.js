@@ -39,7 +39,6 @@ function countTitleAndWordsAndLines (){
             const showLines = document.getElementById('countLines')
             const lines = title.split(/\r?\n/)
             const numeroLinhas = lines.length
-            //showLines.textContent = numeroLinhas
             showLines.textContent = numeroLinhas;
         }
     }
@@ -53,6 +52,10 @@ function getFirstLine(){
     const getinput = document.getElementById('text-input').value
     const firstLine = getinput.split(/\r?\n/)[0]
     document.getElementById('title-input').value = firstLine;
+
+    //Dispara evento para iniciar contagem
+    const event = new Event('input', { bubbles: true });
+    document.getElementById('title-input').dispatchEvent(event);
     createButtonTitle()
     countTileAndWordsAndLines()
 }

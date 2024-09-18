@@ -14,7 +14,7 @@ function addSpaceText(){
         newLi.querySelector('#countLines').id = `countLines-${itemCount}`;
         newLi.querySelector('#titleResult').id = `titleResult-${itemCount}`;
         newLi.querySelector('#buttoncopy').id = `buttoncopy-${itemCount}`;
-        newLi.querySelector('#li').id = `li-${itemCount}`;
+        newLi.querySelector('#li').id = itemCount;
     
         ul.appendChild(newLi)
         itemCount++
@@ -26,8 +26,8 @@ function addSpaceText(){
 function removeSpaceText(){
     if (itemCount > 0){
         itemCount--;
-        if (document.getElementById(`li-${itemCount}`)){
-            const liToRemove = document.getElementById(`li-${itemCount}`)
+        if (document.getElementById(itemCount)){
+            const liToRemove = document.getElementById(itemCount)
             liToRemove.remove()
         }
     } else{
