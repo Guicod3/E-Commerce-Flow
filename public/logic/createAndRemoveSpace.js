@@ -1,4 +1,4 @@
-let itemCount = 0;
+export let itemCount = 0;
 
 function addSpaceText(){
 

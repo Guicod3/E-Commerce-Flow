@@ -1,5 +1,21 @@
 {
   "dependencies": {
+    "@langchain/google-genai": "^0.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "langchain": "^0.3.2",
+    "nodemon": "^3.1.6",
     "tailwindcss": "^3.4.10"
-  }
+  },
+  "name": "e-commerce-flow",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

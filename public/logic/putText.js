@@ -14,7 +14,7 @@ function putText(){
 document.getElementById('search').addEventListener('click', putText)
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter' && document.activeElement === document.getElementById('inputTitle')) {
-        event.preventDefault(); // Previne o comportamento padrão do Enter (como envio de formulário)
-        putText();  // Chama a função para tratar a ação
+        event.preventDefault();
+        putText();
     }
 });
