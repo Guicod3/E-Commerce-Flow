@@ -5,7 +5,8 @@
     "express": "^4.21.0",
     "langchain": "^0.3.2",
     "nodemon": "^3.1.6",
-    "tailwindcss": "^3.4.10"
+    "tailwindcss": "^3.4.10",
+    "zod": "^3.23.8"
   },
   "name": "e-commerce-flow",
   "version": "1.0.0",

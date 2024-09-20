@@ -29,7 +29,6 @@ app.get('/ads/posts/:titles/:content', async (req, res) => {
       } catch (error) {
         res.status(500).send('Erro de processamento da api')
       }
-    
 });
 
 app.listen(PORT, () => {
