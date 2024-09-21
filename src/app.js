@@ -34,3 +34,5 @@ app.get('/ads/posts/:titles/:content', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+export default app;
