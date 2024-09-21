@@ -5,3 +5,7 @@ document.getElementById('Descrição').addEventListener('click', () =>{
 document.getElementById('Anuncios').addEventListener('click', () =>{
     window.location.assign(`/ads`)
 })
+
+document.getElementById('Home').addEventListener('click', () =>{
+    window.location.assign(`/`)
+})

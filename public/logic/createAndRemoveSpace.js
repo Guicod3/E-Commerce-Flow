@@ -3,6 +3,7 @@ export let itemCount = 0;
 function addSpaceText(){
 
     if(itemCount <= 5){
+        itemCount++
         //create element
         const ul = document.getElementById('textAreaAnuncios')
         const template = document.getElementById('litemplate')
@@ -27,7 +28,6 @@ function addSpaceText(){
         newLi.querySelector('#li').id = itemCount;
     
         ul.appendChild(newLi)
-        itemCount++
     } else{
         alert('[ERRO] Limite máximo de campos atingido.')
     }
@@ -35,10 +35,10 @@ function addSpaceText(){
 
 function removeSpaceText(){
     if (itemCount > 0){
-        itemCount--;
         if (document.getElementById(itemCount)){
             const liToRemove = document.getElementById(itemCount)
             liToRemove.remove()
+            itemCount--;
         }
     } else{
         alert('[ERRO] Nenhum item para remover.');

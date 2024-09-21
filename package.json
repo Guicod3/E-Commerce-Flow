@@ -10,10 +10,10 @@
   },
   "name": "e-commerce-flow",
   "version": "1.0.0",
-  "main": "tailwind.config.js",
+  "main": "src/app.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon src/app.js"
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",
