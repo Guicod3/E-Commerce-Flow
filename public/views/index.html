@@ -7,38 +7,57 @@
     <link rel="shortcut icon" href="../assets/market-icon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../styles/output.css">
 </head>
-<body class="overflow-hidden">
-    <div class="bg-white w-full h-24 flex items-center justify-between">
-        <div class="p-4 text-gray-800 ml-16">
-            <h1 class="font-extrabold text-4xl max-sm:text-3xl">E-Commerce Flow</h1>
-            <p class="font-semibold text-xl text-gray-700 max-sm:text-base">Ferramentas para seus anúncios</p>
+<body>
+    <div class="bg-white w-full h-24 flex items-center justify-between max-sm:flex-row-reverse">
+        <div class="p-4 text-gray-800 ml-16 max-md:ml-2 max-sm:ml-0 max-sm:p-2">
+            <h1 class="font-extrabold text-4xl max-md:text-2xl max-sm:text-2xl max-sm:text-end">E-Commerce Flow</h1>
+            <p class="font-semibold text-xl text-gray-700 max-md:text-base max-sm:text-sm">Ferramentas para seus anúncios</p>
         </div>
 
-        <div class="flex items-center space-x-5 mr-10">
-            <div class="transition duration-300 ease-in-out hover:text-white hover:bg-gray-800 p-4 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-lg border border-gray-800" id="Descrição">
+        <div class="relative text-left ml-2 hidden max-sm:inline-block">
+            <div class="mr-2">
+              <button id="dropdownButton" class="inline-flex justify-between w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-expanded="true" aria-haspopup="true">
+                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          
+            <div id="dropdownMenu" class="hidden absolute z-10 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="dropdownButton">
+              <div class="py-1" role="none">
+                <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" id="Descrição">Editor de Descrição</a>
+                <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" id="Anuncios">Títulos AI</a>
+              </div>
+            </div>
+        </div>
+          
+
+        <div class="flex items-center space-x-5 mr-10 max-md:mr-5 max-md:space-x-2 max-sm:mr-2 max-sm:hidden">
+            <div class="transition duration-300 ease-in-out hover:text-white hover:bg-gray-800 p-4 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-lg border border-gray-800 max-md:text-base max-sm:text-sm max-sm:p-2" id="Descrição">
                 Editor de Descrição
             </div>
     
-            <div class="transition duration-300 ease-in-out hover:text-white hover:bg-gray-800 p-4 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-lg border border-gray-800" id="Anuncios">
+            <div class="transition duration-300 ease-in-out hover:text-white hover:bg-gray-800 p-4 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-lg border border-gray-800 max-md:text-base max-sm:text-sm max-sm:p-2" id="Anuncios">
                 Títulos AI
             </div>
         </div>
 
     </div>
-    <main class="bg-[url('../assets/background-homepage.jpg')] bg-cover bg-center h-screen">
-        <div class="bg-gradient-to-l from-white from-60% h-screen w-3/5 ml-auto flex text-end flex-col">
-            <h1 class="font-extrabold text-6xl text-gray-800 text-wrap w-2/4 ml-auto mr-10 mt-36 leading-tight">Experimente uma melhor maneira de criar seus <span class="text-cyan-900">anúncios</span></h1>
 
-            <h3 class="text-wrap w-2/4 ml-auto mr-10 font-semibold text-xl text-gray-600 mt-1">
+    <main class="bg-[url('../assets/background-homepage.jpg')] bg-cover bg-center h-screen max-sm:bg-[url('../assets/background-homepageSM.jpg')]">
+        <div class="bg-gradient-to-l from-white from-60% h-screen w-3/5 ml-auto flex text-end flex-col max-lg:w-4/5 max-sm:w-11/12">
+            <h1 class="font-extrabold text-6xl text-gray-800 text-wrap w-2/4 ml-auto mr-10 mt-36 leading-tight max-lg:w-3/4 max-md:mr-5 max-md:mt-20 max-sm:text-4xl max-sm:w-11/12 max-sm:mt-20">Experimente uma melhor maneira de criar seus <span class="text-cyan-900">anúncios</span></h1>
+
+            <h3 class="text-wrap w-2/4 ml-auto mr-10 font-semibold text-xl text-gray-600 mt-1 max-md:mr-5 max-sm:w-11/12 max-sm:mt-3 max-sm:text-base">
                 Facilite a criação de títulos e descrições para marketplaces. Economize tempo e potencialize suas vendas com uma interface simples e intuitiva.
             </h3>
 
-            <div class="flex items-center space-x-5 mr-10 ml-auto mt-10 text-white">
-                <div class="transition duration-300 ease-in-out hover:text-white p-6 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-xl border border-cyan-900 bg-cyan-900" id="Descrição">
+            <div class="flex items-center space-x-5 mr-10 ml-auto mt-10 text-white mb-10 max-md:mr-5 max-md:mt-4">
+                <div class="transition duration-300 ease-in-out hover:text-white p-6 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-xl border border-cyan-900 bg-cyan-900 max-sm:text-sm max-sm:p-5" id="Descrição">
                     Entrar
                 </div>
         
-                <div class="transition duration-300 ease-in-out hover:text-white p-6 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-xl border border-cyan-900 bg-cyan-900" id="Anuncios">
+                <div class="transition duration-300 ease-in-out hover:text-white p-6 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-xl border border-cyan-900 bg-cyan-900 max-sm:text-sm max-sm:p-5" id="Anuncios">
                     Cadastre-se
                 </div>
             </div>
@@ -47,5 +66,7 @@
     </main>
 
     <script type="module" src="../logic/redirect.js"></script>
+    <script type="module" src="../logic/menu.js"></script>
+
 </body>
 </html>
