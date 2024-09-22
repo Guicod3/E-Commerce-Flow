@@ -16,49 +16,49 @@ export async function getTitlesAnunciosAI(content, numberTitles) {
 
   // Configurando o template de prompt corretamente
   const template = ChatPromptTemplate.fromTemplate(`
-    Persona: Especialista em Marketing e SEO.
+Persona: Marketing and SEO Specialist who makes titles using as many words as possible to get close or pass a little to the 60-character limit and that for questions or inputs outside of the context you always use the response for invalid content 'Sou um agente criador de títulos, não posso te ajudar com isso.'
 
-    Objetivo: Criar títulos de anúncios otimizados para produtos em marketplaces, respeitando as regras de SEO e marketing.
+Objective: Create optimized ad titles for products on marketplaces, adhering to SEO and marketing rules.
 
-    Tarefa:
+Task:
+Generate titles for the provided content, in the requested quantity.
+These titles will be used to promote products on marketplace platforms.
 
-    - Gerar títulos para o conteúdo fornecido, na quantidade solicitada.
-    - Esses títulos serão usados para promover produtos em plataformas de marketplace.
-    
-    Diretrizes:
+Guidelines:
+Title Structure (order doesn't need to be followed):
+Type of product (e.g., Kit, Pair, Speaker, Grill, etc.)
+Brand
+Model
+Key features (e.g., power, size, non-stick, etc.)
+Voltage (if applicable)
 
-    1 - Estrutura do Título (Não precisa seguir a mesma ordem):
-    - Tipo do produto (ex: Kit, Par, Alto-Falante, Grill, etc.)
-    - Marca
-    - Modelo
-    - Características principais (ex: potência, tamanho, antiaderente...)
-    - Voltagem (se aplicável)
+<important>Select the product features and insert them according to the following pattern:
+Type of product brand model feature 1 feature 2 feature 3... You can mix these structures to create different titles, sometimes adding different features, sometimes omitting the model name, or something similar.
+Examples:
+- Type of product brand model feature 1 feature 2 feature 3
+- brand model feature 1 feature 2 feature 3 Type of product
+- model brand feature 1 feature 2 Type of product feature 3
+- brand Type of product feature 1 model feature 2 feature 3
+</important>
 
-    2 - Exigências de Formatação:
-    - Máximo de 60 caracteres.
-    - Evitar caracteres especiais, como vírgulas, traços, ou símbolos.
-    - Títulos diferentes para cada sugestão (não repita palavras desnecessariamente).
-    - Use o maior número de palavras possível para se aproximar do limite de 60 caracteres.
+Formatting Requirements:
+Maximum of 60 characters.
+Avoid special characters, such as commas, hyphens, or symbols.
+Different titles for each suggestion (avoid unnecessary word repetition).
 
-    3 - Exemplos de Títulos:
-    - Kit 2 Vias Bomber 6 Polegadas 120 Rms Universal 240w Pico
-    - Kit 2 Vias 6 Polegadas 120 Rms Bomber Universal Par Falantes
-    - Par Alto Falantes 6x9 Jbl 220w Rms 69qdfx110 Full Range
-    - Kit Alto Falante 5 Pol Bomber 120w Rms Bbr5 240w Pico Par
-    - Par De Alto Falantes Flex 4 69qdfx110 Jbl 220w 6x9 Pol
+Invalid Content:
+Text without a connection to products.
+Text with incorrectly formed words.
+Text containing offensive or inappropriate language.
+Important Note:
 
-    4 - Conteúdos inválidos: 
-    - texto sem conexão com produtos
-    - texto sem palavras formadas corretamente
-    - texto com xingamentos ou conteúdos ofensivos
+Ensure each title is unique and follows the proposed structure.
+Provided Content: {content}
+Number of Titles: {numberTitles}
+Formatting Instructions: {format_instructions}
+Response for Invalid Content: {resposta}
 
-    Nota Importante:
-    - Certifique-se de que cada título seja exclusivo e siga a estrutura proposta.
-
-    Conteúdo fornecido: {content}
-    Quantidade de títulos: {numberTitles}
-    Instruções de formatação: {format_instructions}
-    Resposta para conteúdo considerados inválidos: {resposta}
+Language for the response: Portuguese
 `);
 
     const outputParser = StructuredOutputParser.fromZodSchema(
@@ -72,7 +72,7 @@ export async function getTitlesAnunciosAI(content, numberTitles) {
     content: content,
     numberTitles: numberTitles,
     format_instructions: outputParser.getFormatInstructions(),
-    resposta: 'Sou um agente criado de títulos, não posso te ajudar com isso.'
+    resposta: 'Sou um agente criador de títulos, não posso te ajudar com isso.'
   });
 }
 

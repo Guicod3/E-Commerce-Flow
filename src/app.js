@@ -1,6 +1,6 @@
 import express from 'express';
 import path from 'path';
-// const PORT = 3000
+const PORT = 3000
 const __dirname = path.resolve();
 import { getTitlesAnunciosAI } from './aiLogicModel/AIResponseAnuncios.js'
 
@@ -20,6 +20,10 @@ app.get('/description', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/views/description.html'));
 });
 
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/views/login.html'));
+});
+
 app.get('/ads/posts/:titles/:content', async (req, res) => {
     try {
         const content = req.params.content
@@ -31,8 +35,8 @@ app.get('/ads/posts/:titles/:content', async (req, res) => {
       }
 });
 
-// app.listen(PORT, () => {
-//     console.log(`Servidor rodando na porta ${PORT}`);
-// });
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
 
 export default app;
