@@ -7,13 +7,43 @@
     <link rel="shortcut icon" href="../assets/market-icon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../styles/output.css">
 </head>
-<body>
+<body class="overflow-hidden">
+    <div class="bg-white w-full h-24 flex items-center justify-between">
+        <div class="p-4 text-gray-800 ml-16">
+            <h1 class="font-extrabold text-4xl max-sm:text-3xl">E-Commerce Flow</h1>
+            <p class="font-semibold text-xl text-gray-700 max-sm:text-base">Ferramentas para seus anúncios</p>
+        </div>
+
+        <div class="flex items-center space-x-5 mr-10">
+            <div class="transition duration-300 ease-in-out hover:text-white hover:bg-gray-800 p-4 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-lg border border-gray-800" id="Descrição">
+                Editor de Descrição
+            </div>
+    
+            <div class="transition duration-300 ease-in-out hover:text-white hover:bg-gray-800 p-4 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-lg border border-gray-800" id="Anuncios">
+                Títulos AI
+            </div>
+        </div>
+
+    </div>
     <main class="bg-[url('../assets/background-homepage.jpg')] bg-cover bg-center h-screen">
-        <div class="bg-white h-screen w-3/5 ml-auto"></div>
-        <h1>Home page</h1>
-        <button id="Descrição">Descricao</button>
-        <button id="Anuncios">Anúncios</button>
-        <button id="Home" class="hidden">Home</button>
+        <div class="bg-gradient-to-l from-white from-60% h-screen w-3/5 ml-auto flex text-end flex-col">
+            <h1 class="font-extrabold text-6xl text-gray-800 text-wrap w-2/4 ml-auto mr-10 mt-36 leading-tight">Experimente uma melhor maneira de criar seus <span class="text-cyan-900">anúncios</span></h1>
+
+            <h3 class="text-wrap w-2/4 ml-auto mr-10 font-semibold text-xl text-gray-600 mt-1">
+                Facilite a criação de títulos e descrições para marketplaces. Economize tempo e potencialize suas vendas com uma interface simples e intuitiva.
+            </h3>
+
+            <div class="flex items-center space-x-5 mr-10 ml-auto mt-10 text-white">
+                <div class="transition duration-300 ease-in-out hover:text-white p-6 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-xl border border-cyan-900 bg-cyan-900" id="Descrição">
+                    Entrar
+                </div>
+        
+                <div class="transition duration-300 ease-in-out hover:text-white p-6 rounded-lg hover:scale-105 flex items-center h-6 cursor-pointer font-semibold text-xl border border-cyan-900 bg-cyan-900" id="Anuncios">
+                    Cadastre-se
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <script type="module" src="../logic/redirect.js"></script>

@@ -22,7 +22,7 @@ export async function getTitlesAnunciosAI(content, numberTitles) {
 
     Tarefa:
 
-    - Gerar títulos para o texto fornecido, na quantidade solicitada.
+    - Gerar títulos para o conteúdo fornecido, na quantidade solicitada.
     - Esses títulos serão usados para promover produtos em plataformas de marketplace.
     
     Diretrizes:
@@ -47,12 +47,18 @@ export async function getTitlesAnunciosAI(content, numberTitles) {
     - Kit Alto Falante 5 Pol Bomber 120w Rms Bbr5 240w Pico Par
     - Par De Alto Falantes Flex 4 69qdfx110 Jbl 220w 6x9 Pol
 
+    4 - Conteúdos inválidos: 
+    - texto sem conexão com produtos
+    - texto sem palavras formadas corretamente
+    - texto com xingamentos ou conteúdos ofensivos
+
     Nota Importante:
     - Certifique-se de que cada título seja exclusivo e siga a estrutura proposta.
 
     Conteúdo fornecido: {content}
     Quantidade de títulos: {numberTitles}
     Instruções de formatação: {format_instructions}
+    Resposta para conteúdo considerados inválidos: {resposta}
 `);
 
     const outputParser = StructuredOutputParser.fromZodSchema(
@@ -66,6 +72,7 @@ export async function getTitlesAnunciosAI(content, numberTitles) {
     content: content,
     numberTitles: numberTitles,
     format_instructions: outputParser.getFormatInstructions(),
+    resposta: 'Sou um agente criado de títulos, não posso te ajudar com isso.'
   });
 }
 
