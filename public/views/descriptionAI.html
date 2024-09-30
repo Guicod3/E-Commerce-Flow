@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/market-icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/output.css">
+    <title>Formatar Descrição - E-Commerce Flow</title>
+</head>
+
+<body class="bg-zinc-100 font-sans flex flex-col min-h-screen">
+
+    <div class="flex-grow">
+        <div class="p-5 text-gray-800 bg-white">
+            <h1 class="font-extrabold text-4xl max-sm:text-3xl">E-Commerce Flow</h1>
+            <p class="font-semibold text-xl text-gray-700 max-sm:text-base">Ferramentas para seus anúncios</p>
+        </div>
+
+        <div class="w-auto h-11 bg-amber-100 shadow-lg flex items-center space-x-3 pl-5 font-bold text-gray-800">
+
+                <div class="transition duration-300 ease-in-out hover:text-white hover:bg-gray-800 p-1 rounded-lg hover:scale-110 flex items-center h-6 cursor-pointer" id="Home">
+                    Home
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:text-white hover:bg-gray-800 p-1 rounded-lg hover:scale-110 flex items-center h-6 cursor-pointer" id="Descrição">
+                    Editor de Descrição
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:text-white hover:bg-gray-800 p-1 rounded-lg hover:scale-110 flex items-center h-6 cursor-pointer" id="Anuncios">
+                    Títulos AI
+                </div>
+
+        </div>
+
+        <div class="flex items-center justify-center flex-col mt-5 mx-32 max-sm:mx-5 max-xl:mx-12">
+
+            <div class="flex items-baseline space-x-2 mr-auto text-lg justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start">
+                <h1 class="font-bold text-3xl text-gray-800 max-sm:text-xl max-sm:space-y-1">Formatador de descrição</h1>
+                <div class="flex space-x-2">
+                    <span class="font-bold text-gray-800 max-sm:text-base">Opções: </span>
+                    <div class="flex space-x-3 max-sm:text-base">
+                        <div title="Selecione antes de inserir seu texto.">
+                            <label for="msgFinal">Mensagem final</label>
+                            <input type="checkbox" name="msgFinal" id="msgFinal" onclick="textFormat()">
+                        </div>
+                        <div title="Selecione antes de inserir seu texto.">
+                            <label for="traço">Traços</label>
+                            <input type="checkbox" name="traço" id="traço">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <textarea name="text-input" id="text-input" placeholder="Insira seu texto aqui..."
+                class="w-full mt-1 h-64 rounded-xl placeholder-gray-500 shadow-md p-3 min-h-28"></textarea>
+
+            <div class="relative flex items-baseline mt-6 justify-between w-full max-sm:flex-col max-sm:text-xl max-sm:justify-start" id="titulo">
+                <h2 class="font-bold text-3xl text-gray-800 max-sm:text-xl max-sm:space-y-1">Título</h2>
+                <div class="flex self-baseline max-sm:mr-auto">
+                    <div class="ml-5 text-lg max-sm:ml-0">
+                        <span class="max-md:text-base">Caracteres: </span>
+                        <span class="font-semibold max-md:text-base" id="countCaracteres">0</span>
+                    </div>
+                    <div class="ml-4 text-lg max-sm:ml-2">
+                        <span class="max-md:text-base">Palavras: </span>
+                        <span class="font-semibold max-md:text-base" id="countPalavras">0</span>
+                    </div>
+                    <div class="ml-4 text-lg max-sm:ml-2">
+                        <span class="max-md:text-base">Linhas: </span>
+                        <span class="font-semibold max-md:text-base" id="countLines">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <textarea name="title-input" id="title-input" placeholder="Insira seu texto aqui..."
+                class="w-full mt-1 h-12 rounded-xl placeholder-gray-500 shadow-md p-3 max-md:h-20 transition-colors duration-500 ease-in-out"></textarea>
+
+            <div class="mx-5 flex items-center justify-between mt-6 w-full space-x-16 max-lg:flex-col max-lg:space-x-0 max-lg:space-y-5">
+
+                <div class="w-full mb-auto">
+                    <div id="title" class="flex items-center justify-between">
+                        <h3 class="font-bold text-2xl text-gray-800 max-sm:text-xl">Descrição em texto</h3>
+                    </div>
+
+                    <div id="output" class="w-full shadow-md rounded-xl h-56 bg-white mt-1 p-3">
+                    </div>
+                </div>
+
+                <div class="w-full mb-auto">
+                    <div id="titleHTML" class="flex items-center justify-between">
+                        <h3 class="font-bold text-2xl text-gray-800 max-sm:text-xl">Descrição em Html</h3>
+                    </div>
+
+                    <div id="outputHTML" class="w-full shadow-md rounded-xl h-56 bg-white mt-1 p-3">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-1 mt-10">
+        <div class="container mx-auto text-center">
+            <p>E-Commerce Flow &#174;</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../logic/formatText.js"></script>
+    <script type="module" src="../logic/TitleCount.js"></script>
+</body>
+
+</html>

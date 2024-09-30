@@ -8,13 +8,15 @@ function verifyInput(){
     }
 }
 
+
 async function getTitlesFetch(){
     if(document.getElementById(`1`)){
         try {
             document.getElementById('search').src = '../assets/loading-search.svg'
             let titles = itemCount
             let content = document.getElementById('inputTitle').value
-            let responseTitles = (await fetch(`/ads/posts/${titles}/${content}`))
+            let contentURI = encodeURIComponent(content)
+            let responseTitles = await fetch(`/ads/posts/${titles}/${contentURI}`)
             let dataTitles = await responseTitles.json()
             setTimeout(() => {  
                 dataTitles.titles.forEach((title, index) => {

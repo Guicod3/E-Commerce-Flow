@@ -20,6 +20,14 @@ app.get('/description', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/views/description.html'));
 });
 
+app.get('/adsAI', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/views/anunciosAI.html'));
+});
+
+app.get('/descriptionAI', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/views/descriptionAI.html'));
+});
+
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/views/login.html'));
 });
