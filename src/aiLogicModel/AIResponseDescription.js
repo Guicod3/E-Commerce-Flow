@@ -34,21 +34,39 @@ export async function getDescriptionAI(content) {
   console.log(finalResponse2)
 }
 
-const object = await getDescriptionAI(`Forno e Fritadeira Sem Óleo Oster 42L French Door 2 em 1
-5 funções pré-programadas
-FUNÇÃO FRITAR SEM ÓLEO
-FUNÇÃO CONVECÇÃO
-CAPACIDADE DE 42 LITROS
-VARIAÇÃO DE TEMPERATURA
-fundo curvo ANTIDERRAPANTES
-Controle de temperatura ajustável de 90ºC a 230ºC
-EXCLUSIVO French Door
-Modelo	TSSTTVFDMAF-017 
-Tensão	127V 
-Potência	1700W
-Consumo	1,7 kW/h
-Dimensões [LxAxP]	550x325x490mm
-Garantia (meses)	12
-Peso	9,65Kg
-Código de barras	0053891162586
-Inclui bandeja, grelha e cesto para auxiliar em todos os preparos. Além da bandeja coletora de gordura, que trás praticidade para a limpeza.`)
+const object = await getDescriptionAI(`Ventilador de Parede Falcon 60cm Preto 127/220V
+
+Ideal para grandes espaços.
+
+Lojas, escolas, igrejas, restaurantes, indústrias, ambientes que precisam de grande ventilação.
+
+Hélices 6 pás.
+
+Aerodinâmica que gera mais ventilação.
+
+Grade de aço.
+
+Mais segurança e durabilidade.
+
+Motor 230W.
+
+Motor potente de alta velocidade.
+
+Hélices em plástico de engenharia.
+
+Fortes, leves e aumentam a vida útil do motor.
+
+Oscilação horizontal automática.
+
+Proporciona um fluxo de ar melhor distribuído por todo o ambiente.
+
+Regulagem de inclinação manual podendo ser ajustada.
+
+Selecionar na chave seletora a tensão, 127V ou 220V.
+
+Pintura Eletrostática.
+
+Grade com pintura de alta resistência.
+
+Controle de velocidade em chave para fixação na parede.
+`)

@@ -7,7 +7,8 @@ Objective: Create a high-quality description using the provided content, and app
 General Rule: First letter capitalized and the rest of the word lowercase
 
 Description structure:
-<strong><h1 style="font-size: 14pt">(Type of product brand model feature 1 feature 2 feature 3 feature 4 Voltage... Dont repeat words)</h1></strong>
+
+<strong><h1 style="font-size: 14pt">(Type of product brand model feature 1 feature 2 feature 3 feature 4 Color Voltage... Dont repeat words)</h1></strong>
 <p style="font-size: 12pt">- (feature)</p>
 <p style="font-size: 12pt">- (feature)</p>
 <p style="font-size: 12pt">- (feature)</p>
