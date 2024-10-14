@@ -1,12 +1,12 @@
 import dotenv from 'dotenv';
+dotenv.config({ path: '../../variablesEnviroment/.env' })
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { z } from 'zod'
 import { StructuredOutputParser } from 'langchain/output_parsers';
-dotenv.config()
 
 export async function getTitlesAnunciosAI(content, numberTitles) {
-
+  
   const model = new ChatGoogleGenerativeAI({
     model: "gemini-1.5-flash",
     temperature: 1,
@@ -74,5 +74,5 @@ Language for the response: Portuguese
     format_instructions: outputParser.getFormatInstructions(),
     resposta: 'Sou um agente criador de títulos, não posso te ajudar com isso.'
   });
-}
 
+}
